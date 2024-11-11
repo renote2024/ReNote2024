@@ -1,0 +1,13 @@
+# Requirements file for the virtual environment
+pip==24.3.1
+pandas
+ipykernel 
+jupyter 
+papermill 
+ollama 
+openpyxl 
+joblib
+diskcache
+nbformat
+nbconvert
+pathlib

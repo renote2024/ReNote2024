@@ -1,0 +1,15 @@
+# Requirements file for main program
+pip==24.3.1
+pandas
+ipykernel 
+jupyter 
+papermill 
+ollama 
+openpyxl 
+joblib
+diskcache
+nbformat
+nbconvert
+pathlib
+schedule
+chardet
