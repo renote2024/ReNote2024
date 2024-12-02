@@ -210,8 +210,6 @@ def getAllReposWithNBLists(all_repo_dir_path, results_cache_path, err_cache_path
 
 
 def processNBFolderSequential(all_repo_dir_path, json_paths, results_cache_path, err_cache_path, resume):
-    subprocess.run('cd / && cd tmp && rm -rf pyright*/ && rm -rf pip*/ && rm -rf tmp*/ && rm tmp*', shell=True)
-
     all_repos, all_nbs = getAllReposWithNBLists(all_repo_dir_path, results_cache_path, err_cache_path)
 
     print(f"TOTAL {len(all_repos)} REPOS & {len(all_nbs)} NOTEBOOKS NOT EVALUATED YET")
@@ -235,7 +233,6 @@ def processNBFolderSequential(all_repo_dir_path, json_paths, results_cache_path,
         }
         try:
             shellProcessNB('nb1_venv', config)
-            subprocess.run('cd / && cd tmp && rm -rf pyright*/ && rm -rf pip*/ && rm -rf tmp*/ && rm tmp*', shell=True)
         except Exception as e:
             print(f"Error in processing the repository {repo_path}, Error: {e}")
             print('>>> EXITING THE PROCESSING OF THE REPOSITORY DUE TO ERROR <<<')
@@ -253,8 +250,6 @@ def split_dict(input_dict, chunk_size):
     return [dict(items[i:i + chunk_size]) for i in range(0, len(items), chunk_size)]
 
 def processNBFolderParallel(all_repo_dir_path, json_paths, results_cache_path, err_cache_path, resume):
-    subprocess.run('cd / && cd tmp && rm -rf pyright*/ && rm -rf pip*/ && rm -rf tmp*/ && rm tmp*', shell=True)
-
     all_repos, all_nbs = getAllReposWithNBLists(all_repo_dir_path, results_cache_path, err_cache_path)
 
     print(f"TOTAL {len(all_repos)} REPOS & {len(all_nbs)} NOTEBOOKS NOT EVALUATED YET")
@@ -283,8 +278,6 @@ def processNBFolderParallel(all_repo_dir_path, json_paths, results_cache_path, e
         li_of_li_tasks = divide_list_into_parts(all_repos_with_assign_ids, len(envs))
         assert len(li_of_li_tasks) == len(envs)
         results = Parallel(backend='multiprocessing', n_jobs=len(envs))(delayed(executeTask)(env, task_l) for env, task_l in zip(envs, li_of_li_tasks))
-        subprocess.run('cd / && cd tmp && rm -rf pyright*/ && rm -rf pip*/ && rm -rf tmp*/ && rm tmp*', shell=True)
-
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Read all .ipynb files in a directory.')
