@@ -50,6 +50,8 @@ python main.py --all_repo_dir_path <path/to/all/repos/dir> --json_paths <path/to
 - <path/to/error/cache/dir>: path to a directory to store error notebooks
 - resume: 1 when you want to run all notebooks and check if notebooks have already been evaluated, and 0 otherwise.
 
+  **Note:** The program can be executed in 2 modes (sequential or parallel). Thus, before running the script above, adjust the code to your preferred mode, simply by uncommenting the line you want to execute and commenting out the line you do not want to execute.
+
 2. If you want to view the results in CSV:
 ```bash
 # In project main's directory
