@@ -8,6 +8,10 @@ A robust Python-based analyzer for analyzing, restoring, and executing Jupyter n
 - Virtual environment management capabilities
 - Sufficient disk space for caching and virtual environments
 
+## Pre-execution Preparation
+To replicate the experiment, you will need a number of repositories cloned in your local machine and a CSV file containing the information of all repositories and their notebooks (require fields: project_path (path to the repository in your working directory) and ipynb_files (list of notebook file paths in that repository). You can do this by iterating through all repositories and retrieving the path of all notebook files for each repository.
+We have provided the URL links to all repositories analyzed in our experiment in the CSV file `dataset_results.csv` (marked as the `url` column of the file).
+
 ## Installation
 
 1. Clone the repository:
