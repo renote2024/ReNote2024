@@ -51,3 +51,25 @@ python main.py --all_repo_dir_path <path/to/all/repos/dir> --json_paths <path/to
 # In project main's directory
 python convert_cache_to_csv.py --results_cache_path <path/to/results/cache/dir> --csv <path/to/your/csv/file>
 ```
+
+### CSV File `data_results.csv` Content Overview
+
+| **Column Name**               | **Description**                                                                                              |
+|--------------------------------|--------------------------------------------------------------------------------------------------------------|
+| **Total Code Cells**           | Total number of code cells in the notebook.                                                                 |
+| **Initial_Status**             | Notebook's executability status before restoration (`executable`, `NameError`, etc.).|
+| **Initial_max_execute_cells**  | Maximum number of cells executed successfully before restoration.                                           |
+| **Final_Status**               | Executability status after restoration.                                                                     |
+| **Final_max_execute_cells**    | Maximum number of cells executed successfully after restoration.                                            |
+| **Increased_execution_cells**  | Additional cells executed post-restoration (`Final - Initial`).                                             |
+| **Increased_execution_percentage** | Percentage improvement in execution success.                                                              |
+| **all_unique_errors_during_execution** | List of unique error types encountered during execution.                                                |
+| **total_module_not_found**     | Count of `ModuleNotFoundError` occurrences.                                                                 |
+| **total_file_not_found**       | Count of `FileNotFoundError` occurrences.                                                                   |
+| **total_name_error**           | Count of `NameError` occurrences.                                                                           |
+| **FileCreationError (Manual)** | Notes on manually identified input file creation errors.                                                          |
+| **nb_path**                    | Local file path of the analyzed notebook.                                                                  |
+| **ast_status**                 | Static analysis result for undefined variables, functions, classes, etc. (`no_undefined` if none).                          |
+| **star**                       | Popularity score of the GitHub repository (based on stars).                                                |
+| **repo_path**                  | Local directory path of the repository.                                                                    |
+| **url**                        | GitHub URL of the repository.                                                                              |
