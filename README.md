@@ -1,6 +1,16 @@
-# Jupyter Notebook Analysis
 
-A robust Python-based analyzer for analyzing, restoring, and executing Jupyter notebooks at scale. This tool handles common execution errors by automatically fixing missing dependencies, file paths, and variable definition issues.
+# Are the Majority of Public Computational Notebooks Pathologically Non-Executable?
+
+### Authors
+
+* **Tien Nguyen**: Ph.D. Candidate at Virginia Tech (<tiennguyen@vt.edu>)
+* **Waris Gill**: Ph.D. Candidate at Virginia Tech (<waris@vt.edu>)
+* **Muhammad Ali Gulzar**: Associate Professor at Virginia Tech (<gulzar@vt.edu>)
+
+**Link to paper:** <https://arxiv.org/abs/2502.04184>
+
+**Description:** A robust Python-based analyzer for analyzing, restoring, and executing Jupyter notebooks at scale. This tool handles common execution errors by automatically fixing missing dependencies, file paths, and variable definition issues.
+
 
 ## Prerequisites
 
