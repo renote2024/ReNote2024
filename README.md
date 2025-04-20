@@ -5,7 +5,7 @@
 
 * **Tien Nguyen**: Ph.D. Candidate at Virginia Tech (<tiennguyen@vt.edu>)
 * **Waris Gill**: Ph.D. Candidate at Virginia Tech (<waris@vt.edu>)
-* **Muhammad Ali Gulzar**: Associate Professor at Virginia Tech (<gulzar@vt.edu>)
+* **Muhammad Ali Gulzar**: Assistant Professor at Virginia Tech (<gulzar@vt.edu>)
 
 **Link to paper:** <https://arxiv.org/abs/2502.04184>
 
