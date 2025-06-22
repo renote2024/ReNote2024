@@ -3,10 +3,7 @@ import json
 import sys
 import argparse
 import os
-import shutil
 import pandas as pd
-from tqdm import tqdm
-import diskcache as dc
 from diskcache import Index
 from joblib import Parallel, delayed
 
@@ -288,8 +285,16 @@ if __name__ == '__main__':
     parser.add_argument('--resume', type=int,  help='Check the cache before processing the notebook if 1, else process all the notebooks', default=0)
     args = parser.parse_args()
    
-    # Use this line if you want to run the process sequentially
-    processNBFolderSequential(all_repo_dir_path=all_repo_dir_path, json_paths=json_paths,results_cache_path=parallel_cache_path,err_cache_path=err_cache_path, resume=resume) 
+    # Use this line if you want to run the process in parallel
+    processNBFolderParallel(all_repo_dir_path=args.all_repo_dir_path, 
+                            json_paths=args.json_paths, 
+                            results_cache_path=args.results_cache_path, 
+                            err_cache_path=args.err_cache_path, 
+                            resume=args.resume)
 
-    # Uncomment the following line if you want to run the process in parallel   
-    # processNBFolderParallel(all_repo_dir_path=all_repo_dir_path, json_paths=json_paths, results_cache_path=parallel_cache_path, err_cache_path=err_cache_path, resume=resume)
+    # Uncomment the following line if you want to run the process in sequence   
+    # processNBFolderSequential(all_repo_dir_path=args.all_repo_dir_path,
+    #                          json_paths=args.json_paths,
+    #                          results_cache_path=args.results_cache_path,
+    #                          err_cache_path=args.err_cache_path,
+    #                          resume=args.resume)
